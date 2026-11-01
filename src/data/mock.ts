@@ -50,8 +50,8 @@ function makeItems(names: [string, string][]): ListItem[] {
     rank: 10 - i,
     title,
     year,
-    rating: Math.round((9.6 - i * 0.18) * 10) / 10,
-    votes: 4820 - i * 311,
+    rating: Math.round((9.8 - (9 - i) * 0.18) * 10) / 10,
+    votes: 4820 - (9 - i) * 311,
     image: pool[i % pool.length]!,
     ...(i % 3 === 0 ? { videoUrl: "https://drive.google.com/file/d/example/preview" } : {}),
     body:
