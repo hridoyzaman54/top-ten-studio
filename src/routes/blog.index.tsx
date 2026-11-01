@@ -15,7 +15,8 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function Blog() {
-  const [lead, ...rest] = posts;
+  const lead = posts[0]!;
+  const rest = posts.slice(1);
   return (
     <div className="mx-auto max-w-7xl px-5 pt-20">
       <p className="text-xs uppercase tracking-[0.35em] text-gold">The Journal</p>

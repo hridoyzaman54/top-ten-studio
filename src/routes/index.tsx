@@ -18,7 +18,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const [feature, ...rest] = lists;
+  const feature = lists[0]!;
+  const rest = lists.slice(1);
   const trending = [...lists].sort((a, b) => parseFloat(b.views) - parseFloat(a.views)).slice(0, 5);
 
   return (

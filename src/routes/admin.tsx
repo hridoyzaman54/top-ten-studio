@@ -247,7 +247,7 @@ function CategoriesTab() {
         <div className="mt-4 flex flex-wrap gap-3">
           <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Category name" className="max-w-xs" />
           <Input placeholder="Cover image Drive link" className="max-w-sm" />
-          <Button onClick={() => { if (!name) return; setItems([...items, { ...categories[0], slug: name.toLowerCase(), name, count: 0 }]); setName(""); toast.success("Category added"); }}>
+          <Button onClick={() => { if (!name) return; setItems([...items, { ...categories[0]!, slug: name.toLowerCase(), name, count: 0 }]); setName(""); toast.success("Category added"); }}>
             <Plus className="h-4 w-4" /> Add
           </Button>
         </div>

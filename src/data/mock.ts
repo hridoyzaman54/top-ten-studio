@@ -43,17 +43,17 @@ export type TopList = {
   items: ListItem[];
 };
 
-const pool = [hero, scifi, horror, music, drama, gaming, history];
+const pool: string[] = [hero, scifi, horror, music, drama, gaming, history];
 
 function makeItems(names: [string, string][]): ListItem[] {
-  return names.map(([title, year], i) => ({
+  return names.map(([title, year], i): ListItem => ({
     rank: 10 - i,
     title,
     year,
     rating: Math.round((9.6 - i * 0.18) * 10) / 10,
     votes: 4820 - i * 311,
-    image: pool[i % pool.length],
-    videoUrl: i % 3 === 0 ? "https://drive.google.com/file/d/example/preview" : undefined,
+    image: pool[i % pool.length]!,
+    ...(i % 3 === 0 ? { videoUrl: "https://drive.google.com/file/d/example/preview" } : {}),
     body:
       "A masterclass in atmosphere and restraint, it rewards every rewatch with details you missed the first time. Critics adored it, audiences argued about it, and decades later it still sets the bar others chase.",
   }));
