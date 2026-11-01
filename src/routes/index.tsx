@@ -114,7 +114,7 @@ function Home() {
         </div>
         <div className="lg:col-span-2">
           <SectionTitle kicker="Live poll" title="Have your say" />
-          <Reveal><PollCard poll={polls[0]} /></Reveal>
+          <Reveal><PollCard poll={polls[0]!} /></Reveal>
         </div>
       </section>
 
@@ -148,7 +148,7 @@ function Home() {
             <div key={l} className="bg-card p-8 text-center">
               <div className="font-display text-5xl text-gold">{n}</div>
               <div className="mt-2 text-sm text-muted-foreground">{l}</div>
-              {l.includes("rating") && <div className="mt-2 flex justify-center"><Stars value={5} /></div>}
+              {l?.includes("rating") && <div className="mt-2 flex justify-center"><Stars value={5} /></div>}
             </div>
           ))}
         </div>
