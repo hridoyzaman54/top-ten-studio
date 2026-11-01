@@ -28,7 +28,7 @@ function HeroSlider() {
   const s = lists[i]!;
 
   return (
-    <section className="grain relative isolate h-[88vh] min-h-[600px] overflow-hidden bg-ink text-ink-foreground">
+    <section className="grain relative isolate h-[88vh] min-h-[600px] max-h-[860px] overflow-hidden bg-ink text-ink-foreground">
       <AnimatePresence mode="sync">
         <motion.img
           key={s.slug}
